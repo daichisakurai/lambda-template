@@ -1,0 +1,48 @@
+{
+  "name": "lambda-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.102",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/mysql": "^2.15.21",
+    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/parser": "^5.34.0",
+    "aws-sdk": "^2.1201.0",
+    "eslint": "^8.22.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "build": "npm run format && npm run lint:fix && tsc",
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx}\"",
+    "format": "prettier --write --config .prettierrc ./src/",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix \"./src/**/*.{ts,tsx}\"",
+      "prettier --write --config .prettierrc ./src/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daichisakurai/lambda-template.git"
+  },
+  "author": "daichisakurai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daichisakurai/lambda-template/issues"
+  },
+  "homepage": "https://github.com/daichisakurai/lambda-template#readme"
+}
